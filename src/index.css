@@ -1,13 +1,144 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+    font-size: 62.5%;
 }
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: rgb(115,180,242);
+    background: linear-gradient(295deg, rgba(115,180,242,1) 0%, rgba(249,164,196,1) 100%);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,.8);
+    padding: 1.6rem 2rem;
+}
+
+    .header__title {
+        position: relative;
+        font-size: 1.6rem;
+        letter-spacing: .175rem;
+        margin: 0;
+        padding-left: 2.4rem;
+    }
+
+    .header__title::before {
+        content: '';
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        background-image: url(../public/img/icon__globe.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        left: 0;
+        top: calc(50% - .8rem);
+        height: 1.6rem;
+        width: 1.6rem;
+    }
+    
+    .posts {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 95%;
+        max-width: 72rem;
+        margin: 5rem auto;
+    }
+
+    .travel-card {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        background: #ffffff;
+        border-radius: 1rem;
+        overflow: hidden;
+        margin-bottom: 5rem;
+    }
+
+    .travel-card__img-container {
+        width: 100%;
+    }
+
+    .travel-card__content {
+        width: 100%;
+        padding: 1.6rem;
+    }
+
+    .travel-card__meta {
+        margin-bottom: 1.2rem;
+    }
+
+    .travel-card__location,
+    .travel-card__map {
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #000000;
+        letter-spacing: .025rem;
+    }
+
+    .travel-card__title {
+        margin-top: 0;
+    }
+
+    .travel-card__excerpt {
+        margin: 0;
+    }
+
+    @media only screen and (min-width: 500px) {
+        .travel-card__img-container {
+            width: 33.333%;
+            position: relative;
+        }
+
+        .travel-card__img-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .travel-card__meta {
+            margin-bottom: 1.6rem;
+        }
+
+        .travel-card__content {
+            width: 66.666%;
+            padding: 3rem;
+        }
+
+        .travel-card__title {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .travel-card__dates {
+            font-weight: 700;
+            margin: 0 0 2rem;
+        }
+
+        .travel-card__excerpt {
+            font-size: 1.6rem;
+            letter-spacing: .05rem;
+        }
+    }
