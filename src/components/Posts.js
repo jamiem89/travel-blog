@@ -17,7 +17,6 @@ function Posts() {
             />
         )
     })
-    console.log(cards);
     return(
         <section className="posts">
             {cards}
